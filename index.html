@@ -23,7 +23,37 @@ section{min-height:100vh;padding:110px 8% 70px}
 .home{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;background:linear-gradient(135deg,#0B0C10 0%,#1F2833 100%)}
 .tag{display:inline-block;background:#1F2833;color:#66FCF1;padding:8px 14px;border-radius:20px;font-size:14px;font-weight:bold;margin-bottom:20px;border:1px solid #45A29E}
 h1{font-size:58px;line-height:1.05;margin-bottom:18px;color:#F8FAFC}
-.highlight{color:#66FCF1;text-shadow:0 0 18px rgba(102,252,241,.35)}
+```css
+.highlight{
+    color:#66FCF1;
+    animation:cyberGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes cyberGlow{
+    0%, 100%{
+        opacity:1;
+        text-shadow:
+            0 0 5px #66FCF1,
+            0 0 12px #66FCF1,
+            0 0 22px #45A29E;
+    }
+
+    50%{
+        opacity:0.65;
+        text-shadow:
+            0 0 2px #66FCF1,
+            0 0 6px #45A29E;
+    }
+}
+
+/* Stops animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+    .highlight{
+        animation:none;
+    }
+}
+```
+
 .subtitle{font-size:26px;font-weight:bold;margin-bottom:10px;color:#F8FAFC}
 .university{color:#C5C6C7;margin-bottom:26px;font-size:16px}
 .intro{font-size:18px;color:#C5C6C7;max-width:620px;margin-bottom:30px}
